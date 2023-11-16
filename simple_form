@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Lagsanghniaghnia Form</title>
+<link rel="stylesheet" href="styles.css" />
+<head></head>
+ <header>
+    <h1 id="title">Garfield Cat Form</h1>
+    <p id="description">Thank you for loving lagsanghniaghnia </p>
+    </header>
+<body> <div class="container">
+<form method="post" action="#" id="survey-form">
+<fieldset>
+    <label id="name-label" for="name">Name: <input name="cname" id="name" type="text" placeholder="Full or not at all..." required/> </label>
+    <label id="email-label" for="email">Email: <input name="cemail" id="email" type="email" placeholder="Enter your e-mail..." required/> </label>
+    <label id="number-label" for="number">Age: <input name="cage" id="number" type="number" min="13" max="99" placeholder="13-99" required/> </label>
+    <label for="dropdown">How much do you love lasahgniahg<select id="dropdown" name="select-dropdown"><option value="">select at least 1 option</option>
+    <option value="1">so much!!!</option>
+    <option value="2">much so!!!!</option>
+    </select></label>
+    <span>Would you share my form later? </span>
+    <label for="radio-one"> <input id="radio-one" type="radio" name="radio" value="Sure" class="inline" /> Sure</label>
+        <label for="radio-two"><input id="radio-two" value="sure, but second option of <<sure>>" type="radio" name="radio" class="inline" /> I ain't not sure</label>
+         <span>What are you proud of?</span>
+         <label for="check"> 
+          <input id="check" type="checkbox" value="eat-fast" name="checkbox" class="inline" />I can eat fast
+        </label>
+        <label for="check"> 
+        <input id="check" type="checkbox" value="not-eat-fast" name="checkbox" class="inline" />I canNOT eat fast
+        </label>
+         <label>
+        <input id="check" type="checkbox" value="try-lasagnia" name="checkbox" class="inline" />I never ever tried eat lasaghngghasnia, but I wish to!
+        </label>
+         <label>
+        <input id="check" type="checkbox" value="help" name="checkbox" class="inline" />Help me, I don't even know what am I doing here...
+        </label>
+   <label for="bio">Describe us how much do you love laghsuniagh
+          <textarea id="bio" name="bio" rows="4" cols="130" placeholder="I love lagshihngha so much, bacause..."></textarea>
+        </label>
+         <input id="submit" type="submit" value="Lasagniah!" />
+</fieldset>
+</form>
+</container>
+</body>
+</html>
