@@ -89,7 +89,7 @@
          padding: 8px;
          font-size: 16px;
          background: rgba(211, 0, 190, 0.129);
-         border: 1px solid rgba(211, 0, 190, 0.7);
+         border: 1px solid rgba(230, 230, 230, 0.684);
          border-radius: 50px;
          width: 200px;
          opacity: 0;
@@ -103,9 +103,9 @@
       }
 
       #btn {
-         background: rgba(211, 0, 190, 0.449);
+         background: rgba(211, 0, 190, 0);
          padding: 15px;
-         border: 1px solid rgba(0, 0, 211, 0.7);
+         border: 1px solid rgba(255, 255, 255, 0.686);
          border-radius: 50px;
          cursor: pointer;
          opacity: 0;
@@ -117,6 +117,17 @@
 
       #btn:hover {
          background: rgba(211, 0, 190, 0.7);
+      }
+
+      label {
+         color: rgba(221, 221, 221, 0.9);
+         font-size: 20px;
+         text-shadow: 3px 3px 3px rgba(144, 144, 144, 0.7);
+         font-family: 'Nunito Sans';
+         font-weight: 100;
+         opacity: 0;
+         animation: fadeIn 3.5s ease-in-out forwards;
+
       }
    </style>
 </head>
@@ -133,8 +144,14 @@
             <p>Match Vibes to Your Emotions</p>
          </div>
          <form id="search">
-            <input type="text" name="artist" placeholder="Artist">
-            <input type="text" name="title" placeholder="Title">
+            <div class="input-container">
+               <label for="artist">Author</label><br>
+               <input type="text" name="artist" id="artist" placeholder="The Weekend">
+            </div>
+            <div class="input-container">
+               <label for="title">Title</label> <br>
+               <input type="text" name="title" id="title" placeholder="Blinding Lights">
+            </div>
          </form>
          <div id="but-div">
             <button id="btn">
