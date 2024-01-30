@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Store</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+
+      * {
+         color: rgba(45, 0, 160, 0.729);
+         margin: 0;
+         padding: 0;
+         list-style-type: none;
+         text-decoration: none;
+         padding-block: 0;
+         padding-inline: 0;
+      }
+
+      body {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         min-height: 100vh;
+         background: linear-gradient(to right top, rgba(209, 107, 165, 1) 0%, rgba(134, 168, 231, 1) 35%, rgba(95, 251, 241, 1) 100%);
+      }
+
+      h1 {
+         color: rgba(221, 221, 221, 0.9);
+         font-size: 95px;
+         text-shadow: 3px 3px 3px rgba(144, 144, 144, 0.7);
+         font-family: 'Nunito Sans';
+         font-weight: 100;
+         opacity: 0;
+         animation: fadeIn 1.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+         0% {
+            opacity: 0;
+         }
+
+         100% {
+            opacity: 1;
+         }
+      }
+
+      header {
+         text-align: center;
+         display: block;
+         overflow: hidden;
+         width: 100%;
+         margin-bottom: 10px;
+      }
+
+      main {
+         background: linear-gradient(40deg, rgba(209, 107, 165, 1) 0%, rgba(134, 168, 231, 1) 35%, rgba(95, 251, 241, 1) 100%);
+      }
+
+      p {
+         color: rgba(221, 221, 221, 0.9);
+         font-size: 35px;
+         text-shadow: 3px 3px 3px rgba(144, 144, 144, 0.7);
+         font-family: 'Nunito Sans';
+         font-weight: 100;
+         opacity: 0;
+         animation: fadeIn 3.5s ease-in-out forwards;
+      }
+
+      #try p {
+         font-size: 50px;
+      }
+
+      form {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+         margin-top: 60px;
+         margin-bottom: 80px;
+
+      }
+
+      input {
+         margin: 10px;
+         padding: 8px;
+         font-size: 16px;
+         background: rgba(211, 0, 190, 0.129);
+         border: 1px solid rgba(211, 0, 190, 0.7);
+         border-radius: 50px;
+         width: 200px;
+         opacity: 0;
+         animation: fadeIn 2.3s ease-in-out forwards;
+      }
+
+      input::placeholder {
+         padding-left: 15px;
+         color: rgba(221, 221, 221, 0.703);
+
+      }
+
+      #btn {
+         background: rgba(211, 0, 190, 0.449);
+         padding: 15px;
+         border: 1px solid rgba(0, 0, 211, 0.7);
+         border-radius: 50px;
+         cursor: pointer;
+         opacity: 0;
+         animation: fadeIn 3.5s ease-in-out forwards;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+         margin-bottom: 10px;
+         transition: background 0.3s ease-in-out;
+      }
+
+      #btn:hover {
+         background: rgba(211, 0, 190, 0.7);
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div id="main">
+         <div id="logo">
+            <h1>
+               In Da Mood
+            </h1>
+         </div>
+         <div id="slogan">
+            <p>Match Vibes to Your Emotions</p>
+         </div>
+         <form id="search">
+            <input type="text" name="artist" placeholder="Artist">
+            <input type="text" name="title" placeholder="Title">
+         </form>
+         <div id="but-div">
+            <button id="btn">
+               <p>Mood It!</p>
+            </button>
+         </div>
+      </div>
+   </header>
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         document.querySelector('h1').classList.add('animate');
+      });
+   </script>
+</body>
+
+</html>
