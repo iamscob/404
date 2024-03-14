@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+      #gameCanvas {
+         border: 1px solid #000;
+         background: #87CEEB;
+         position: relative;
+      }
+
+      #score {
+         position: absolute;
+         top: 10px;
+         left: 10px;
+         font-size: 24px;
+      }
+
+      #distance {
+         position: absolute;
+         top: 40px;
+         left: 10px;
+         font-size: 24px;
+      }
+   </style>
+</head>
+
+<body>
+
+   <canvas id="gameCanvas" width="375" height="812"></canvas>
+
+   <div id="score"></div>
+   <div id="distance"></div>
+
+   <script>
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+      const scoreElement = document.getElementById("score");
+      const distanceElement = document.getElementById("distance");
+
+      let playerY = canvas.height - 60;
+      let oxygenLevel = 100;
+      let isDiving = false;
+      let diveTime = 0;
+      let bubbles = 4;
+      let obstacleSize = 50;
+      let obstacles = [];
+      let score = 0;
+      let distance = 0;
+      let distanceIncrement = 0.1;
+      let speedMultiplier = 0.6;
+
+      function draw() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+         if (isDiving) {
+            ctx.fillStyle = "rgba(0, 0, 255, 0.3)";
+         } else {
+            ctx.fillStyle = "rgba(0, 0, 0, 1)";
+         }
+
+         ctx.fillRect(canvas.width / 2 - 6, playerY - 4, 12, 12);
+
+         ctx.fillRect(canvas.width / 2 - 8, playerY + 8, 16, 8);
+
+         ctx.fillStyle = isDiving ? "rgba(0, 0, 255, 0.8)" : "rgba(0, 0, 255, 1)";
+         ctx.fillRect(canvas.width / 2 - 8, playerY + 16, 16, 8);
+
+         ctx.fillStyle = isDiving ? "rgba(0, 0, 255, 0.8)" : "rgba(0, 0, 0, 1)";
+         ctx.fillRect(canvas.width / 2 - 8, playerY + 12, 4, 8);
+         ctx.fillRect(canvas.width / 2 + 4, playerY + 12, 4, 8);
+
+         ctx.fillRect(canvas.width / 2 - 4, playerY + 24, 4, 8);
+         ctx.fillRect(canvas.width / 2, playerY + 24, 4, 8);
+
+
+
+         distance += distanceIncrement;
+         distanceElement.innerHTML = "Distance: " + Math.floor(distance) + "m";
+
+
+         if (Math.floor(distance) % 20 === 0) {
+            speedMultiplier *= 1.01;
+         }
+
+
+         for (let obstacle of obstacles) {
+
+            let img = new Image();
+            img.src = 'https://w7.pngwing.com/pngs/642/599/png-transparent-pixel-art-others-miscellaneous-3d-computer-graphics-text.png';
+            ctx.drawImage(img, obstacle.x, obstacle.y, obstacleSize, obstacleSize);
+
+
+            if (!isDiving && playerY < obstacle.y + obstacleSize && playerY + 40 > obstacle.y && canvas.width / 2 - 10 < obstacle.x + obstacleSize && canvas.width / 2 + 10 > obstacle.x) {
+               gameOver();
+            }
+         }
+
+         if (isDiving) {
+            diveTime++;
+            if (diveTime > 120) {
+               gameOver();
+            }
+            if (oxygenLevel > 0) {
+               oxygenLevel -= 1;
+            }
+         } else {
+            if (oxygenLevel < 100) {
+               oxygenLevel += 0.5;
+            }
+         }
+
+
+         for (let i = 0; i < bubbles; i++) {
+            ctx.beginPath();
+            ctx.arc(canvas.width - 30, 30 * (4 - i) + 20, 10, 0, 2 * Math.PI);
+            if (oxygenLevel >= (i + 1) * 25) {
+               ctx.fillStyle = "red";
+            } else {
+               ctx.fillStyle = "gray";
+            }
+            ctx.fill();
+         }
+
+
+         if (Math.random() < 0.06) {
+            let x = Math.random() * (canvas.width - obstacleSize);
+            let isOverlap = false;
+            for (let obstacle of obstacles) {
+               if (x < obstacle.x + obstacleSize + 10 && x + obstacleSize + 10 > obstacle.x) {
+                  isOverlap = true;
+                  break;
+               }
+            }
+            if (!isOverlap) {
+               obstacles.push({
+                  x: x,
+                  y: 0,
+                  width: obstacleSize,
+                  height: obstacleSize
+               });
+            }
+         }
+
+
+         for (let obstacle of obstacles) {
+            obstacle.y += 3 * speedMultiplier;
+            if (obstacle.y === canvas.height) {
+               score++;
+               scoreElement.innerHTML = "Score: " + score;
+            }
+         }
+
+         obstacles = obstacles.filter(obstacle => obstacle.y < canvas.height);
+
+         if (oxygenLevel <= 0 && !isDiving) {
+            gameOver();
+         }
+
+         requestAnimationFrame(draw);
+      }
+
+      function gameOver() {
+         alert("Game Over");
+         location.reload();
+      }
+
+
+      window.addEventListener("keydown", function (e) {
+         if (e.code === "Space") {
+            isDiving = true;
+         }
+      });
+
+      window.addEventListener("keyup", function (e) {
+         if (e.code === "Space") {
+            isDiving = false;
+            diveTime = 0;
+         }
+      });
+
+
+      draw();
+   </script>
+
+</body>
+
+</html>
