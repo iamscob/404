@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="styleDrugijak.css">
+   <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,700&family=Monomaniac+One&family=Tilt+Prism&display=swap"
+      rel="stylesheet">
+   <title></title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+
+<body>
+   <h1>Moja Galeria Zdjęć</h1>
+   <ul id="gallery-list" class="gallery-list"></ul>
+
+   <div id="gallery-details">
+      <h2 id="gallery-title"></h2>
+      <p id="gallery-description" class="gallery-description"></p>
+      <div id="gallery-thumbnails"></div>
+   </div>
+
+   <button id="show-all-button">Pokaż wszystkie galerie</button>
+   <div id="other-section" style="display: none;"></div>
+
+   <button class="add-image-button" onclick="openForm()">Dodaj obrazek</button>
+
+   <div id="image-form" style="display: none;">
+      <h2>Dodaj nowy obrazek</h2>
+      <form id="add-image-form">
+         <label for="image-title">Tytuł:</label>
+         <input type="text" id="image-title" name="title" required>
+         <br>
+         <label for="image-url">URL obrazka:</label>
+         <input type="text" id="image-url" name="url" required>
+         <br>
+         <button type="submit">Dodaj</button>
+      </form>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+   <script src="drugijak.js"></script>
+</body>
+
+</html>

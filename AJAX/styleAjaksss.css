@@ -1,0 +1,67 @@
+body {
+
+   background: rgb(238, 174, 202);
+   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 50vh;
+   font-family: 'Roboto Mono', monospace;
+   margin: 0;
+   }
+
+   h1,
+   h2,
+   table {
+   text-align: center;
+   margin-bottom: 20px;
+   }
+
+   table {
+   width: 80%;
+
+   border-collapse: collapse;
+   }
+
+   th,
+   td {
+   background-color: #ff000021;
+   border: 1px solid #f8a6a6be;
+   padding: 8px;
+   }
+
+   th {
+   background-color: #ff2a006e;
+   }
+
+   td {
+   animation: rotate 10s infinite;
+   }
+
+   .rotator {
+   font-weight: bold;
+   animation: rotate 10s infinite;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   }
+
+   @keyframes rotate {
+   0% {
+   opacity: 0;
+   }
+
+   20% {
+   opacity: 1;
+   }
+
+   80% {
+   opacity: 1;
+   }
+
+   100% {
+   opacity: 0;
+   }
+   }
