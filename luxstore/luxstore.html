@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Store</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,800&family=Work+Sans&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Work+Sans&display=swap');
+
+      * {
+         color: black;
+         margin: 0;
+         padding: 0;
+         list-style-type: none;
+         text-decoration: none;
+         font-family: 'Work Sans', sans-serif;
+         padding-block: 0;
+         padding-inline: 0;
+
+      }
+
+      #slogan {
+         padding-top: 10px;
+         padding-left: 20px;
+         float: left;
+         text-align: center;
+         text-decoration: none;
+         font-size: 14px;
+      }
+
+      h1 {
+         font-size: 70px;
+         font-style: italic;
+         font-weight: bolder;
+      }
+
+      header {
+         display: block;
+         overflow: hidden;
+         height: 35px;
+         font-family: 'Work Sans', sans-serif;
+         background: rgb(243, 243, 245);
+         width: 100%;
+         margin-bottom: 10px;
+      }
+
+      p {
+         color: rgb(95, 95, 95);
+      }
+
+      header>ul {
+         float: right;
+         margin-right: 40px;
+         padding: 0;
+      }
+
+      header>ul>li {
+         padding-top: 10px;
+         display: inline-block;
+         margin-right: 10px;
+         font-size: 14px;
+      }
+
+      header>ul>li>a {
+
+         display: block;
+         text-align: center;
+         padding: 0;
+
+      }
+
+      nav {
+
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         color: black;
+         height: 40px;
+         font-weight: 600;
+         font-family: 'Open Sans', sans-serif;
+         width: 100%;
+         border-bottom: 3px solid rgb(243, 243, 245);
+         padding-bottom: 10px;
+
+      }
+
+      #logo {
+         font-size: 32px;
+         margin-left: 10px;
+      }
+
+      #grey-txt {
+         color: rgb(95, 95, 95);
+      }
+
+      #prod {
+         text-align: center;
+      }
+
+      #other {
+
+         text-align: right;
+         float: right;
+         margin-right: 40px;
+      }
+
+
+      #search-input {
+         padding: 10px;
+         width: 150px;
+         border-radius: 25px;
+         outline: none;
+         border: 0px;
+         font-size: 16px;
+         padding-left: 40px;
+         background-color: rgb(243, 243, 245);
+         font-weight: 600;
+         font-size: 20px;
+
+      }
+
+
+      nav ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         display: inline-block;
+      }
+
+      nav ul li {
+         display: inline;
+         margin-right: 15px;
+
+      }
+
+      nav ul li a {
+         text-decoration: none;
+         color: black;
+      }
+
+
+      #search,
+      #cart,
+      #fav {
+         display: inline-block;
+         margin-right: 10px;
+      }
+
+      #promo-h {
+         text-align: center;
+         padding-top: 15px;
+      }
+
+      #promo-p {
+
+         padding-bottom: 10px;
+         text-align: center;
+         font-style: italic;
+         font-size: 22px;
+      }
+
+      #other>#cart>svg {
+         align-items: center;
+      }
+
+      #film {
+         width: 100%;
+         height: 680px;
+         align-items: center;
+         background: rgb(243, 243, 245);
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div id="mini-logo"><a id="slogan" href="#">Your Luxury Shop Online</a></div>
+      <ul>
+         <li><a href="#">Info</a></li> <span>|</span>
+         <li><a href="#">Help </a></li> <span>|</span>
+         <li><a href="#">Log in</a></li>
+      </ul>
+   </header>
+   <nav>
+      <a href="#"><span id="logo"><span id="grey-txt">LUX</span>STORE</span></a>
+      <div id="prod">
+         <li>
+            <ul>
+               <li><a href="#">News</a></li>
+            </ul>
+            <ul>
+               <li><a href="#"> For Him</a></li>
+            </ul>
+            <ul>
+               <li> <a href="#">For Her</a></li>
+            </ul>
+            <ul>
+               <li><a href="#">For Babies</a></li>
+            </ul>
+         </li>
+      </div>
+      <div id="other">
+         <div id="search">
+            <input type="text" id="search-input" placeholder="Search">
+         </div>
+         <div id="cart">
+            <svg fill="#000000" height="23px" width="23px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-24.16 -24.16 531.42 531.42" xml:space="preserve"
+               transform="rotate(0)">
+               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+               <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                  stroke-width="16.425400000000003"></g>
+               <g id="SVGRepo_iconCarrier">
+                  <g>
+                     <path
+                        d="M434.55,418.7l-27.8-313.3c-0.5-6.2-5.7-10.9-12-10.9h-58.6c-0.1-52.1-42.5-94.5-94.6-94.5s-94.5,42.4-94.6,94.5h-58.6 c-6.2,0-11.4,4.7-12,10.9l-27.8,313.3c0,0.4,0,0.7,0,1.1c0,34.9,32.1,63.3,71.5,63.3h243c39.4,0,71.5-28.4,71.5-63.3 C434.55,419.4,434.55,419.1,434.55,418.7z M241.55,24c38.9,0,70.5,31.6,70.6,70.5h-141.2C171.05,55.6,202.65,24,241.55,24z M363.05,459h-243c-26,0-47.2-17.3-47.5-38.8l26.8-301.7h47.6v42.1c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h141.2v42.1 c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h47.6l26.8,301.8C410.25,441.7,389.05,459,363.05,459z">
+                     </path>
+                  </g>
+               </g>
+            </svg>
+         </div>
+
+         <div id="fav">fav</div>
+      </div>
+   </nav>
+   <div id="main">
+      <div id="promo-h">
+         <h1>
+            -65% BLACK EVERY DAY
+         </h1>
+      </div>
+      <div id="promo-p">
+         <p> Use <span style="cursor: pointer; font-weight: 800;" id="txt">PROMOCODE23</span> to all products </p>
+      </div>
+      <div id="film">
+         <a href="#"> <video id="vid" width="100%" height="100%" autoplay muted
+               src="https://media.istockphoto.com/id/1330919694/pl/filmy/zbli%C5%BCenie-atrakcyjne-m%C5%82oda-asia-pani-wybieraj%C4%85c-jej-str%C3%B3j-mody-ubrania-w-szafie-salon-w-domu.mp4?s=mp4-640x640-is&k=20&c=lbnThnGFNRzKmP9xEnxuk2euZmZFto3GNtnphAq_P6A="></video></a>
+      </div>
+   </div>
+   <script>
+      var video = document.getElementById("vid")
+      video.addEventListener('ended', function () {
+         video.currentTime = 0;
+         video.play();
+      })
+      var copyTxt = document.getElementById("txt");
+
+      copyTxt.addEventListener('click', function () {
+         var range = document.createRange();
+         range.selectNode(copyTxt);
+         window.getSelection().removeAllRanges();
+         window.getSelection().addRange(range);
+         document.execCommand("copy");
+         alert("Copied :)");
+      })
+   </script>
+</body>
+
+</html>
